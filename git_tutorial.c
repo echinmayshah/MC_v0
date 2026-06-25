@@ -147,68 +147,68 @@
 			//just imagine we've - commitId_1 -> commitId_2 -> commitId_3 -> commitId_4(head)
 
 (4). branch - 49:30 onwards in apnacollege-video	//done-2026.01.28
-			Info:	In Git, a branch is like a separate workspace where you can make changes and try new ideas without affecting the main project. 
-					Think of it as a "parallel universe" for your code.
-					Common Reasons to Create a Branch
-						->	Developing a new feature
-						->	Fixing a bug
-						->	Experimenting with ideas
-					Merging points:
-						->	Combine changes from different branches is merging 
-						->	Regularly merge into the main branch from your feature branch to minimize conflicts.
-						->	Read and resolve conflicts carefully—do not just accept all changes blindly.
-						->	Write clear and descriptive merge commit messages.
-						->	Always commit or stash your changes before starting a merge
-						->	Write clear and descriptive merge commit messages
-			4.1)	$git branch newBranch			//create a newBranch											//done-2026.01.28
-					$git branch --sh				//show current branch 											//done-2026.01.28
-					$git branch --list				//show all branches with current branch highlighted(green*)		//done-2026.01.28
-					$git branch -a					//show all branches
-					$git branch 					//shows current branch(greeen*) & other branches too 			//done-2026.01.28
-					$git checkout newBranch			//checkout into newBranch										//done-2026.01.28
-					$git switch newBranch			//to switch a branch											//done-2026.01.28
-					$git checkout -b branchName 	//to create & checkout altogether								//done-2026.01.28
-					$git branch -m newBranchName	//to rename a branch(to be in that branch) 						//done-2026.01.28
-					$git branch -m old-name new-name	//to rename a branch(from another branch)					//done-2026.01.28
-			4.2)	$git branch -d branchName		//to delete branchName branch 									//done-2026.01.28
-													//to delete branch, first exit from that branch, 
-													//go to parent branch, then only we can delete this branch
-			4.3)	$git diff main/parentBranch		//to get diff between current branch & main/parentBranch branch //done-2026.01.28
-			4.4) 	$git merge branch_1				//to merge from branch_1 into master(first checkout into master branch)	//done-2026.01.28
-					//e.g., step_1: git checkout master		//First, we need to change to the master branch
-							step_2: git merge emergency-fix //Now emergency-fix branch will be merged into master branch 
-					//Info:	branch name - wip, feature, bug, junk etc. 
-					//e.g. git branch feature/add-chat-support 	- example of brachName
-					//e.g. git branch bug/login-not-works		- example of branchName
-					->	flovour of merging 	//done-2026.01.28
-						->	$git merge branchName			//if your branch can be merged with a fast-forward(no new commits on the base)
-															//git just moves the branch pointer forward.
-						->	$git merge --no-ff branch		//Non-fast-forward merge: preserving branch history & create a merge commit too 
-						->	$git merge --squash branchName	//combine all the changes from a branch into a single commit(instead of keeping every commit)
-															//KIM - not updating HEAD
-						->	$git merge --abort				//if you run into trouble during a merge(like a conflict you do not want to resolve), 
-															//you can cancel the merge and go back to how things were before
-						->	$git config --local merge.ff false	//set non-fast-forward merging as the default behavior in a repository using a configuration option
-			4.5)	$git push -u origin newBranch 	//when we create a new branch in our git-local, 				//done-2026.01.28
-													//we can not use only git push to upload all the commits of that newly created branch, 
-													//first we have to use/set upstraem(-set-upstream(-u)), so we can push on GitHub
-													//now, refresh on git-hub to check newly created branch & its commits - it will be on GitHub 
-					//info: when we commits in local-repo, it shows your local-repo is x commits ahead than GitHub, do use git push to push all your commits exist on git-local(i.e. to sync with GitHub)
-			4.7)	$git push -f 	//-f = forcefully - if we used git reset --hard commitId previously, 			//done-2026.01.28
-									//console will propmt message that your repo is few commits behind than remote, use git pull to sync with remote
-									//but, we have purposly reset head to some previous commitId
-									//so, here git-hub(remote) set at other head than that of our local-repo, so we have to use -f here
-			4.8)	$git push -f -u origin newBranch	//if we have hard reset in our git-local, then we need to use this for -f & -u altogether	//done-2026.01.28
-					//let say we have created a pull request on remote, merged the pull request in base/parent branch, so we have to pull these latest changes to our git-local,
-					//for this we have to first checkout to base/parent branch, after that "$git pull" to get latest changes from the git-hub(remote) to our git-local 
-					//whenever we use "$git pull" - it will pull the latest chanages from that particular branch, not from the main branch
-					//to get all the latest changes from git-hub, first checkout to that branch, then do "$git pull", so our local-repo will be synced with remote
-			4.8)	$git branch -D branchName	//to force delete an unmerged branch								//done-2026.01.28
-					//When deleting a branch by just using -d, 
-					//git do not allow to delete, it shows make sure it's merged first. 
-					//If you try to delete an unmerged branch, Git will prevent you from doing
-					//so, here we have to use -D to delete the unmerged branchName 
-			4.10)	$git pull 	//Fetch and merge changes from a remote
+	Info:	In Git, a branch is like a separate workspace where you can make changes and try new ideas without affecting the main project. 
+			Think of it as a "parallel universe" for your code.
+			Common Reasons to Create a Branch
+				->	Developing a new feature
+				->	Fixing a bug
+				->	Experimenting with ideas
+			Merging points:
+				->	Combine changes from different branches is merging 
+				->	Regularly merge into the main branch from your feature branch to minimize conflicts.
+				->	Read and resolve conflicts carefully—do not just accept all changes blindly.
+				->	Write clear and descriptive merge commit messages.
+				->	Always commit or stash your changes before starting a merge
+				->	Write clear and descriptive merge commit messages
+	4.1)	$git branch newBranch			//create a newBranch											//done-2026.01.28
+			$git branch --sh				//show current branch 											//done-2026.01.28
+			$git branch --list				//show all branches with current branch highlighted(green*)		//done-2026.01.28
+			$git branch -a					//show all branches
+			$git branch 					//shows current branch(greeen*) & other branches too 			//done-2026.01.28
+			$git checkout newBranch			//checkout into newBranch										//done-2026.01.28
+			$git switch newBranch			//to switch a branch											//done-2026.01.28
+			$git checkout -b branchName 	//to create & checkout altogether								//done-2026.01.28
+			$git branch -m newBranchName	//to rename a branch(to be in that branch) 						//done-2026.01.28
+			$git branch -m old-name new-name	//to rename a branch(from another branch)					//done-2026.01.28
+	4.2)	$git branch -d branchName		//to delete branchName branch 									//done-2026.01.28
+											//to delete branch, first exit from that branch, 
+											//go to parent branch, then only we can delete this branch
+	4.3)	$git diff main/parentBranch		//to get diff between current branch & main/parentBranch branch //done-2026.01.28
+	4.4) 	$git merge branch_1				//to merge from branch_1 into master(first checkout into master branch)	//done-2026.01.28
+			//e.g., step_1: git checkout master		//First, we need to change to the master branch
+					step_2: git merge emergency-fix //Now emergency-fix branch will be merged into master branch 
+			//Info:	branch name - wip, feature, bug, junk etc. 
+			//e.g. git branch feature/add-chat-support 	- example of brachName
+			//e.g. git branch bug/login-not-works		- example of branchName
+			->	flovour of merging 	//done-2026.01.28
+				->	$git merge branchName			//if your branch can be merged with a fast-forward(no new commits on the base)
+													//git just moves the branch pointer forward.
+				->	$git merge --no-ff branch		//Non-fast-forward merge: preserving branch history & create a merge commit too 
+				->	$git merge --squash branchName	//combine all the changes from a branch into a single commit(instead of keeping every commit)
+													//KIM - not updating HEAD
+				->	$git merge --abort				//if you run into trouble during a merge(like a conflict you do not want to resolve), 
+													//you can cancel the merge and go back to how things were before
+				->	$git config --local merge.ff false	//set non-fast-forward merging as the default behavior in a repository using a configuration option
+	4.5)	$git push -u origin newBranch 	//when we create a new branch in our git-local, 				//done-2026.01.28
+											//we can not use only git push to upload all the commits of that newly created branch, 
+											//first we have to use/set upstraem(-set-upstream(-u)), so we can push on GitHub
+											//now, refresh on git-hub to check newly created branch & its commits - it will be on GitHub 
+			//info: when we commits in local-repo, it shows your local-repo is x commits ahead than GitHub, do use git push to push all your commits exist on git-local(i.e. to sync with GitHub)
+	4.7)	$git push -f 	//-f = forcefully - if we used git reset --hard commitId previously, 			//done-2026.01.28
+							//console will propmt message that your repo is few commits behind than remote, use git pull to sync with remote
+							//but, we have purposly reset head to some previous commitId
+							//so, here git-hub(remote) set at other head than that of our local-repo, so we have to use -f here
+	4.8)	$git push -f -u origin newBranch	//if we have hard reset in our git-local, then we need to use this for -f & -u altogether	//done-2026.01.28
+			//let say we have created a pull request on remote, merged the pull request in base/parent branch, so we have to pull these latest changes to our git-local,
+			//for this we have to first checkout to base/parent branch, after that "$git pull" to get latest changes from the git-hub(remote) to our git-local 
+			//whenever we use "$git pull" - it will pull the latest chanages from that particular branch, not from the main branch
+			//to get all the latest changes from git-hub, first checkout to that branch, then do "$git pull", so our local-repo will be synced with remote
+	4.8)	$git branch -D branchName	//to force delete an unmerged branch								//done-2026.01.28
+			//When deleting a branch by just using -d, 
+			//git do not allow to delete, it shows make sure it's merged first. 
+			//If you try to delete an unmerged branch, Git will prevent you from doing
+			//so, here we have to use -D to delete the unmerged branchName 
+	4.10)	$git pull 	//Fetch and merge changes from a remote
 
 (5). stashing - Temporarily save changes that aren't ready to commit	//done-2026.01.28
 	5.1)	->	Sometimes you need to quickly switch tasks or fix a bug, but you're not ready to commit your work
