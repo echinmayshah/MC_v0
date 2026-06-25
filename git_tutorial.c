@@ -170,6 +170,7 @@
 			$git checkout -b branchName 	//to create & checkout altogether								
 			$git branch -m newBranchName	//to rename a current branch 									
 			$git branch -m old-name new-name	//to rename a branch(from another branch is also possible)	
+			//change_0_in_branch_dev_0
 	4.2)	$git branch -d branchName		//to delete branchName branch 									//done-2026.01.28
 											//to delete branch, first exit from that branch, 
 											//go to parent branch, then only we can delete this branch
