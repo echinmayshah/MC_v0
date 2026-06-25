@@ -74,7 +74,8 @@
 				->	$git commit --amend 						//to add it to your last commit, same as above, but it prompt to edit commit message	//done-2026.01.28
 				->	$git commit --amend -m "Corrected message" 	//to fix the last commit message														//done-2026.01.28
 			->	Accidentally committed the wrong files?
-				->	$git reset --soft prevCommitId	// to undo the last commit and keep your changes staged												//done-2026.01.28
+				->	$git reset --soft prevCommitId	//to undo the last commit and keep your changes staged												//done-2026.01.28
+													//KIM: we have to select previous commitId here
 	2.10)	advance: tag //done-2026.01.28
 			->	A tag in Git is like a label or bookmark for a specific commit.
 			->	Tags are most often used to mark important points in your project history, like releases(v1.0 or v2.0).
@@ -83,7 +84,7 @@
 			->	KIM:
 				->	if we reset a branch to some previous commit, the tags will not be deleted, we have to delete all the existing tags explicitly
 				->	even if we delete an entire branch, tags will not be deleted 
-			$git tag v1.0 							//a simple light tag //just a name for a commit, quick and simple, but does not store extra information			//done-2026.01.28
+			$git tag v1.0 							//a simple light tag //just a name for a commit, quick and simple, but does not store extra information				//done-2026.01.28
 			$git tag -a v1.0 -m "Ver 1.0 release"	//stores author, date, and message, recommended for releases and sharing with others								//done-2026.01.28
 			$git tag v1.1 1a2b3c4d					//to tag older commit by specifying its hash, 																		//done-2026.01.28
 													//we can not edit tag here, we have to use another non-used tag
@@ -103,7 +104,7 @@
 				->	Update or Replace a Tag
 					->	If you need to move a tag to a different commit and update the remote, use --force:
 						$git tag -f v1.0 <new-commit-hash>	//first update the tag with some-other commitId											//done-2026.01.28
-						$git push --force origin v1.0		//second push this by using this command to update the tag for some commitId			//done-2026.01.28
+						$git push --force origin v1.0		//second push this by using this command to update the tag for some other commitId		//done-2026.01.28
 			->	Info: 
 				->	Tag already exists? Use git tag -d <tagname> to delete it, then re-create.
 				->	Pushed the wrong tag? Delete it locally and remotely, then push the correct tag.
@@ -146,7 +147,7 @@
 					Merging points:
 						->	Combine changes from different branches is merging 
 						->	Regularly merge into the main branch from your feature branch to minimize conflicts.
-						->	Read and resolve conflicts carefully—don't just accept all changes blindly.
+						->	Read and resolve conflicts carefully—do not just accept all changes blindly.
 						->	Write clear and descriptive merge commit messages.
 						->	Always commit or stash your changes before starting a merge
 						->	Write clear and descriptive merge commit messages
@@ -187,7 +188,7 @@
 			4.7)	$git push -f 	//-f = forcefully - if we used git reset --hard commitId previously, 			//done-2026.01.28
 									//console will propmt message that your repo is few commits behind than remote, use git pull to sync with remote
 									//but, we have purposly reset head to some previous commitId
-									//so, here git-hub(remote) set at other head than that of our local-repo, so we've to use -f here
+									//so, here git-hub(remote) set at other head than that of our local-repo, so we have to use -f here
 			4.8)	$git push -f -u origin newBranch	//if we have hard reset in our git-local, then we need to use this for -f & -u altogether	//done-2026.01.28
 					//let say we have created a pull request on remote, merged the pull request in base/parent branch, so we have to pull these latest changes to our git-local,
 					//for this we have to first checkout to base/parent branch, after that "$git pull" to get latest changes from the git-hub(remote) to our git-local 
@@ -306,7 +307,7 @@ $git rebase newBranch 	//it will append all the changes to main commits, observe
 				SSH uses a pair of keys (public and private) to make sure only you can access your code.
 				SSH keys come in pairs: a public key (like a lock) and a private key (like your own key).
 				You share the public key with the server (like GitHub or Bitbucket), but keep the private key safe on your computer.
-				Only someone with the private key can access what's locked by the public key.
+				Only someone with the private key can access what is locked by the public key.
 			->	SSH key pair - A public and private key for secure access
 				Commands: 
 					ssh-keygen - Generate a new SSH key pair
@@ -335,7 +336,7 @@ $git rebase newBranch 	//it will append all the changes to main commits, observe
 				Add a short, clear description of what you changed in the Commit message box.
 				This helps others understand your update.
 			->	By default, you can commit directly to the main (or master) branch.
-				For bigger changes, it's best to create a new branch.
+				For bigger changes, it is best to create a new branch.
 				When you choose to create a new branch, GitHub will automatically suggest a branch name.
 				After committing, you can open a pull request to propose your changes.
 				That is how you edit code directly in GitHub!
