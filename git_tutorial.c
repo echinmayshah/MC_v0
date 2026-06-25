@@ -122,29 +122,29 @@
 					You can force-push a tag with git push --force origin <tagname>, 
 					but be careful! This will overwrite the tag for everyone using the remote.
 						
-(3). reset, revert & restore 	//done-2026.01.28
-			3.1)	$git revert commitId			//added will be deleted and/or deleted will be added 										//done-2026.01.28
-													//commit history will be remained, so we can go forward/reverse in particular commit		
-													//if we need to delete commit history, then do it by $git reset --hard commitId
-													//KIM: whichever commitId selected to revert, it will revert entirely for that commitId, so we have to sel commitId of prevCommitId
-														//e.g. 
-															//comments_0 added	//commitId_0_Hash
-															//comments_1 added	//commitId_1_Hash
-															//comments_2 added	//commitId_2_Hash
-															//comments_3 added	//commitId_3_Hash
-															//$git log --oneline	//to see commit logs
-																//commitId_3_Hash
-																//commitId_2_Hash
-																//commitId_1_Hash
-																//commitId_0_Hash
-															//$git revert commitId_2_Hash	//it will delete upto comments_2 added, comments_1 added will be the last line 
-			3.2)	$git reset --hard CommitId		//it will remove all the commits after CommitId												//done-2026.01.28
-			3.3)	git restore fileName 			//Undo changes in your git-local-repo(just an UNDO) 										//done-2026.01.28
-					$git restore --staged fileName 	//to unstaged a fileName(if, Staged the wrong file) 										//done-2026.01.28
-			Info:	//Info: Base_Node -> Node -> Node -> .. -> Node(Head) - last node is called head											//done-2026.01.28			
-					//Info: HEAD is a reference to the current commit your working directory is based on. Usually points to the latest commit on your current branch
-					//head is pointing to last/latest commit
-					//just imagine we've - commitId_1 -> commitId_2 -> commitId_3 -> commitId_4(head)
+(3). reset, revert & restore 		//done-2026.01.28
+	3.1)	$git revert commitId	//added will be deleted and/or deleted will be added 										//done-2026.01.28
+									//commit history will be remained, so we can go forward/reverse in particular commit		
+									//if we need to delete commit history, then do it by $git reset --hard commitId
+									//KIM: whichever commitId selected to revert, it will revert entirely for that commitId, so we have to sel commitId of prevCommitId
+										//e.g. 
+											//comments_0 added	//commitId_0_Hash
+											//comments_1 added	//commitId_1_Hash
+											//comments_2 added	//commitId_2_Hash
+											//comments_3 added	//commitId_3_Hash
+											//$git log --oneline	//to see commit logs
+												//commitId_3_Hash
+												//commitId_2_Hash
+												//commitId_1_Hash
+												//commitId_0_Hash
+											//$git revert commitId_2_Hash	//it will delete upto comments_2 added, comments_1 added will be the last line 
+	3.2)	$git reset --hard CommitId		//it will remove all the commits after CommitId												//done-2026.01.28
+	3.3)	git restore fileName 			//Undo changes in your git-local-repo(just an UNDO) 										//done-2026.01.28
+			$git restore --staged fileName 	//to unstaged a fileName(if, Staged the wrong file) 										//done-2026.01.28
+	Info:	//Info: Base_Node -> Node -> Node -> .. -> Node(Head) - last node is called head											//done-2026.01.28			
+			//Info: HEAD is a reference to the current commit your working directory is based on. Usually points to the latest commit on your current branch
+			//head is pointing to last/latest commit
+			//just imagine we've - commitId_1 -> commitId_2 -> commitId_3 -> commitId_4(head)
 
 (4). branch - 49:30 onwards in apnacollege-video	//done-2026.01.28
 			Info:	In Git, a branch is like a separate workspace where you can make changes and try new ideas without affecting the main project. 
@@ -1384,7 +1384,8 @@ Extra: 	->	In Git, "diverged" means that two branches (usually your local branch
 					A--->B--->C--->D--->E with the header at E.
 		->	A merge commit is a unique type of Git commit that integrates changes from two or more diverging branches into a single.
 			If the base branch has received new commits since you originally branched off, the history has diverged. Git automatically creates a merge commit to bridge the two trajectories.
-		->	in git(even in linux terminal), when colon(:) occurs on console, we can type n for next & q for quit			
+		->	in git(even in linux terminal), when colon(:) occurs on console, we can type n for next & q for quit		
+		->	-f & --force are dentical	
 					
 #if 0	
 				exe	- target	tutorial
