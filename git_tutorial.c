@@ -53,20 +53,22 @@
 	2.4)	$git log 	//to get history of git all commits with commitId
 			$git log --oneline
 			$git show commitId //show the changes done in this commit
-			->	Info: While viewing the log, you can search for a word by typing /wordToBeFind
+			->	Info: While viewing the log, you can search for a word(add after colon(:)) by typing /wordToBeFind
 				(for example, /fix), then press n to jump to the next match.
 				Use the arrow keys to scroll, and press q to quit
 	2.5)	$git status 				//when we save in file, it indicates file is modified, we should/have to add & commit
 	2.6)	$git diff 					//shows modifications
 			$git diff commit_1 commit_2	//changes between any two specific commits
 			$git diff --staged			//different between your staged files and the last commit	//done-2026.01.28
-	2.7)	$git show 09f4acd			//details and changes for a specific commit					//done-2026.01.28
+	2.7)	$git show 					//details and changes for a latest commit					//done-2026.01.28
+			$git show commitId			//details and changes for a specific commitId				//done-2026.01.28
 	2.8)	$git blame fileName			//shows the changes by each auther - with time-line 		//done-2026.01.28
 	2.9)	advance:
-			->	git log --author="Alice"		//See only the commits made by a specific author														//done-2026.01.28
-			->	git log --since="2 weeks ago"	//See only commits made in the last two weeks															//done-2026.01.28 "1 hour ago"
-			->	git log --stat					//summary of particular changes in each commits															//done-2026.01.28
-			->	git log --graph					//a simple graph of your branch and merge history(great for visualizing merges)							//remaining-2026.01.28
+			->	git log --author="Alice"			//See only the commits made by a specific author														//done-2026.01.28
+			->	git log --since="2 weeks ago"		//See only commits made in the last two weeks			
+				git log --since="10 minutes ago"	//See only commits made in the last two weeks															//done-2026.01.28 "1 hour ago"
+			->	git log --stat						//summary of particular changes in each commits															//done-2026.01.28
+			->	git log --graph						//a simple graph of your branch and merge history(great for visualizing merges)							//remaining-2026.01.28
 			-> 	if you forgot to add a file in your last commit, it can be added to your last commit
 				->	$git commit --amend --no-edit				//quickly add staged changes to last commit, keep message as it was						//done-2026.01.28
 				->	$git commit --amend 						//to add it to your last commit, same as above, but it prompt to edit commit message	//done-2026.01.28
@@ -1372,7 +1374,7 @@ Extra: 	->	In Git, "diverged" means that two branches (usually your local branch
 					A--->B--->C--->D--->E with the header at E.
 		->	A merge commit is a unique type of Git commit that integrates changes from two or more diverging branches into a single.
 			If the base branch has received new commits since you originally branched off, the history has diverged. Git automatically creates a merge commit to bridge the two trajectories.
-					
+		->	in git(even in linux terminal), when colon(:) occurs on console, we can type n for next & q for quit			
 					
 #if 0	
 				exe	- target	tutorial
