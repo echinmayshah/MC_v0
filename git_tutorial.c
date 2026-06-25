@@ -49,8 +49,6 @@
 								//be-careful: it remove file, it does not just remove from git local, but almost deleted the file
 								//comments_10 added
 								//comments_11 added
-								//comments_12 added
-								//comments_13 added
 			$git restore --staged fileName //to unstaged a fileName (if, Staged the wrong file) //done-2026.01.28
 	2.2)	$git commit -m "commit message"
 	2.3)	$git commit -a -m "commit message" //to add & commit altogether - but it works on all files - Be-careful
