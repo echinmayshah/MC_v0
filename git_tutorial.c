@@ -91,7 +91,9 @@
 			$git tag -f v1.0 <new-commit-hash>		//to edit a tag (to assign tag to some-other commitId)																//done-2026.01.28
 			$git tag 								//see all tags in your repository																					//done-2026.01.28
 			git tag -d v1.0							//delete a tag locally																								//done-2026.01.28
-			$git show v1.0 							//details about a tag																														//done-2026.01.28
+			$git show v1.0 							//details about a tag																								//done-2026.01.28
+			//add & commit trial
+			//this must be not included
 			->	Push Tags to Remote					
 				-> 	By default, tags exist only on your local computer
 					If you want others to see your tags, you need to push them to remote.
