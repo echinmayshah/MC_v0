@@ -103,10 +103,16 @@
 							You must push tags explicitly as shown above.
 				->	git push --tags 					//push all your local tags to the remote at once											//done-2026.01.28
 				->	git push origin --delete tag v1.0	//delete a tag from the remote repository, but tag will exist on local-repo					//done-2026.01.28
-				->	Update or Replace a Tag
-					->	If you need to move a tag to a different commit and update the remote, use --force:
-						$git tag -f v1.0 <new-commit-hash>	//first update the tag with some-other commitId											//done-2026.01.28
-						$git push --force origin v1.0		//second push this by using this command to update the tag for some other commitId		//done-2026.01.28
+				->	Update or Replace a Tag(on git-local)
+					->	If you need to move a tag to a different commit, use --force:
+						$git tag -f v1.0 <new-commit-hash>	//first, update the tag with some-other commitId											//done-2026.01.28
+				->	Update or Replace a Tag(on git-remote(git-hub))
+					->	first, delete the tag on remote by
+						$git git push origin --delete tag v1.0
+					->	second, update/replace the tag on git-local
+						$git tag -f v1.0 <new-commit-hash>
+					->	third, push this by tag	
+					->	$git push origin v1.0
 			->	Info: 
 				->	Tag already exists? Use git tag -d <tagname> to delete it, then re-create.
 				->	Pushed the wrong tag? Delete it locally and remotely, then push the correct tag.
