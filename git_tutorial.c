@@ -81,6 +81,7 @@
 			->	Tags are most often used to mark important points in your project history, like releases(v1.0 or v2.0).
 				use tags to mark releases, major milestones, or stable points in your project.
 			->	always use annotated tags(with -a -m) for anything public or shared.
+			->	by, $git log --oneline, we can get idea of tag associated with which particular commitId
 			->	KIM:
 				->	if we reset a branch to some previous commit, the tags will not be deleted, we have to delete all the existing tags explicitly
 				->	even if we delete an entire branch, tags will not be deleted 
