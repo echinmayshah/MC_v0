@@ -175,6 +175,7 @@
 			//change_2_in_branch_dev_0
 			//change_3_in_branch_dev_0
 			//change_4_in_branch_dev_0
+			//change_5_in_branch_dev_0
 	4.2)	$git branch -d branchName		//to delete branchName branch 									//done-2026.01.28
 											//to delete branch, first exit from that branch, 
 											//go to parent branch, then only we can delete this branch
