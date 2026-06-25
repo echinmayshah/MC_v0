@@ -1,4 +1,4 @@
-(1). repo-creation, version 	//done-2026.01.28
+1). repo-creation, version 	//done-2026.01.28
 	//student-apna college
 	1.1) 	$git --version 		//done-2026.01.28 - git version 2.49.0.windows.1
 			$git -v 			//done-2026.01.28 - git version 2.49.0.windows.1
@@ -38,7 +38,7 @@
 		//as directory converted into git-local-repo(by $git init) - extentions will be added as .u/.A/.M etc.
 		//then, as we use $git add fileName - .u converted into .A, now if we modify this file, then .A into .M
 
-(2). add, commit & tag 	//done-2026.01.28
+2). add, commit & tag 	//done-2026.01.28
 	2.1)	$git add fileName	-(1)
 			$git add *			-(1)	//all
 			$git add --all		-(1)
@@ -122,7 +122,7 @@
 					You can force-push a tag with git push --force origin <tagname>, 
 					but be careful! This will overwrite the tag for everyone using the remote.
 						
-(3). reset, revert & restore 		//done-2026.01.28
+3). reset, revert & restore 		//done-2026.01.28
 	3.1)	$git revert commitId	//added will be deleted and/or deleted will be added 										//done-2026.01.28
 									//commit history will be remained, so we can go forward/reverse in particular commit		
 									//if we need to delete commit history, then do it by $git reset --hard commitId
@@ -146,7 +146,7 @@
 			//head is pointing to last/latest commit
 			//just imagine we've - commitId_1 -> commitId_2 -> commitId_3 -> commitId_4(head)
 
-(4). branch - 49:30 onwards in apnacollege-video	//done-2026.01.28
+4). branch - 49:30 onwards in apnacollege-video	//done-2026.01.28
 	Info:	In Git, a branch is like a separate workspace where you can make changes and try new ideas without affecting the main project. 
 			Think of it as a "parallel universe" for your code.
 			Common Reasons to Create a Branch
