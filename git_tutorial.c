@@ -46,9 +46,6 @@
 			$git add .			-(1) - 	//all - to add file in staging area
 			$git rm fileName 	//to remove file from git working dir 	//done-2026.01.28
 								//now that file does not exist on the branch where we have fired this command 
-								//be-careful: it remove file, it does not just remove from git local, but almost deleted the file
-								//comments_10 added
-								//comments_11 added
 			$git restore --staged fileName //to unstaged a fileName (if, Staged the wrong file) //done-2026.01.28
 	2.2)	$git commit -m "commit message"
 	2.3)	$git commit -a -m "commit message" //to add & commit altogether - but it works on all files - Be-careful
@@ -62,7 +59,7 @@
 	2.6)	$git diff 					//shows modifications
 			$git diff commit_1 commit_2	//changes between any two specific commits
 			$git diff --staged			//different between your staged files and the last commit	//done-2026.01.28
-	2.7)	$git show 					//details and changes for a specific commit					//done-2026.01.28
+	2.7)	$git show 09f4acd			//details and changes for a specific commit					//done-2026.01.28
 	2.8)	$git blame fileName			//shows the changes by each auther - with time-line 		//done-2026.01.28
 	2.9)	advance:
 			->	git log --author="Alice"		//See only the commits made by a specific author														//done-2026.01.28
@@ -116,6 +113,18 @@
 			3.1)	$git revert commitId			//added will be deleted and/or deleted will be added 										//done-2026.01.28
 													//commit history will be remained, so we can go forward/reverse in particular commit		
 													//if we need to delete commit history, then do it by $git reset --hard commitId
+													//KIM: whichever commitId selected to revert, it will revert entirely for that commitId, so we have to sel commitId of prevCommitId
+														//e.g. 
+															//comments_0 added	//commitId_0_Hash
+															//comments_1 added	//commitId_1_Hash
+															//comments_2 added	//commitId_2_Hash
+															//comments_3 added	//commitId_3_Hash
+															//$git log --oneline	//to see commit logs
+																//commitId_3_Hash
+																//commitId_2_Hash
+																//commitId_1_Hash
+																//commitId_0_Hash
+															//$git revert commitId_2_Hash	//it will delete upto comments_2 added, comments_1 added will be the last line 
 			3.2)	$git reset --hard CommitId		//it will remove all the commits after CommitId												//done-2026.01.28
 			3.3)	git restore fileName 			//Undo changes in your git-local-repo(just an UNDO) 										//done-2026.01.28
 					$git restore --staged fileName 	//to unstaged a fileName(if, Staged the wrong file) 										//done-2026.01.28
@@ -1348,7 +1357,20 @@ $git rebase newBranch 	//it will append all the changes to main commits, observe
 					Check your network connection if you cannot reach a remote server.
 					Use clear, descriptive names for remotes(e.g., origin, upstream, backup).
 					Remove unused remotes to keep your project tidy.
-
+Extra: 	->	In Git, "diverged" means that two branches (usually your local branch and its remote tracking counterpart) have split onto separate paths of commit history after a shared starting point.
+		->	Fast-Forward Merge: If the base branch has not changed since you branched off, Git simply moves the branch pointer forward to your latest commit. 
+			No merge commit is created because no divergence occurred.
+				->	Imagine there is a branch
+					Master : A---> B ---> 
+					There are two commits on it, A and B There is another feature branch, from B, it has the following commit History
+					Feature : C--->D---->E
+					So the present it looks like this
+					`A--->B`
+						 `C--->D--->E `
+					So when you want to merge it, you can do it by fast forward merge by moving the head from B to E and incorporating the feature branch in the main branch and it looks like this
+					A--->B--->C--->D--->E with the header at E.
+		->	A merge commit is a unique type of Git commit that integrates changes from two or more diverging branches into a single.
+			If the base branch has received new commits since you originally branched off, the history has diverged. Git automatically creates a merge commit to bridge the two trajectories.
 					
 					
 #if 0	
