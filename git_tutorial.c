@@ -59,7 +59,7 @@
 	2.6)	$git diff 					//shows modifications
 			$git diff commit_1 commit_2	//changes between any two specific commits
 			$git diff --staged			//different between your staged files and the last commit	//done-2026.01.28
-	2.7)	$git show 09f4acd			//details and changes for a specific commit					//done-2026.01.28
+	2.7)	$git show 					//details and changes for a specific commit					//done-2026.01.28
 	2.8)	$git blame fileName			//shows the changes by each auther - with time-line 		//done-2026.01.28
 	2.9)	advance:
 			->	git log --author="Alice"		//See only the commits made by a specific author														//done-2026.01.28
